@@ -1,0 +1,310 @@
+CAMPUS FOOD DELIVERY AND ORDER MANAGEMENT SYSTEM
+PROGRAMMING FUNDAMENTALS 
+GROUP 9 COURSE WORK 
+
+NAME 
+REGISTRATION NUMBER
+CONTACT
+
+SSEKYANZI ROBERT
+VU-DIT-2603-3729-DAY
+0748006291
+
+SEDU GEOFREY
+VU-DIT-2603-3379-DAY
+0746057247
+
+DHAKUBA MUHAMMAD
+VU-BIT-2603-2931-DAY
+0756781493
+
+SUHAIB ABDILLAHI MUSE
+VU-BCD-2603-3185-DAY
+
+
+KIGONGO DEVIS JONATHAN
+VU-BCS-2603-3017-DAY
+0706370408
+
+ABDIRAHMAN MOHAMMED HASSAN
+VU-BBC-2603-2831-DAY
+0702547099
+
+MUHOOZI DANIEL
+VU-BSF-2603-3535-DAY
+0768658598
+
+NSUBUGA GALIWANGO FAHAD
+VU-BCD-2603-2979-DAY
+0742607369
+
+AYMAN ABDUALMAWLA HAROUN ZAKARIA
+VU-BBC-2603-2973-DAY
+078925742
+
+TUHUMWIRE JUDITH
+VU-BIT-2603-0372-DAY
+0786190401
+
+1. INTRODUCTION
+The Campus Food Delivery and Order Management System is a console-based Python application designed to help a campus food delivery service manage customers, food items, orders, order totals, delivery information and order status. It replaces manual record keeping with a simple computerized solution.
+The program uses functions, lists and dictionaries to organize information and saves records in a JSON file so that data remains available after the program is closed.
+2. PROBLEM STATEMENT
+Campus food businesses may receive many orders from students and staff. Manual management can cause incorrect totals, missing customer information, duplicate records and difficulty tracking deliveries. This system provides a simple computerized way to manage these activities accurately.
+3. AIM
+To design and implement a Python-based Campus Food Delivery and Order Management System that records customers and food orders, calculates costs, tracks order status and preserves records between program runs.
+4. OBJECTIVES
+Register and store customer information.
+Maintain a menu of food items and prices.
+Create orders containing one or more food items.
+Calculate order totals accurately.
+Record delivery location and contact information.
+Update and display order status.
+Search for orders by ID or customer name.
+Display basic order and sales statistics.
+Validate user input and handle common errors.
+Save and reload records using JSON.
+5. SYSTEM REQUIREMENTS
+5.1 Hardware Requirements
+Computer with at least 2 GB RAM.
+Keyboard and monitor.
+At least 100 MB free storage.
+Internet connection for GitHub submission.
+5.2 Software Requirements
+Python 3.x.
+VS Code, IDLE, PyCharm or another Python editor.
+Windows, Linux or macOS.
+GitHub account.
+6. SYSTEM DESIGN
+The system is divided into small functions. This makes the program easier to understand, test and maintain.
+Menu management: stores food names, categories and prices.
+Customer management: stores names, phone numbers and delivery locations.
+Order management: creates orders containing multiple items.
+Payment calculation: calculates subtotal, delivery fee and total.
+Status management: tracks Pending, Preparing, Out for Delivery, Delivered and Cancelled.
+Search: finds orders using order ID or customer name.
+Reports: displays orders and basic statistics.
+Persistence: stores records in campus_food_data.json.
+7. DATA STRUCTURES
+The project uses dictionaries and lists. A dictionary stores related values using meaningful keys, while lists store multiple records. Customers are stored in a dictionary using phone numbers as keys, and orders are stored in a list of dictionaries.
+8. REQUIREMENTS MAPPING
+Requirement
+Feature
+Implementation
+
+a
+Sensible structure
+Functions, lists, dictionaries and main menu
+
+b
+Meaningful code
+Clear names, comments and consistent style
+
+c
+Group report
+Detailed report provided in this document
+
+d
+Work division
+Group contribution table provided
+
+e
+Presentation/Viva
+Demonstration and viva questions provided
+
+f
+GitHub/Screenshots
+Submission and screenshot checklists provided
+
+COMPLETE PYTHON SOURCE CODE
+Screenshot 1; sales and performance report
+
+Screenshot 2; meals and their prices 
+
+Screenshot 3; customer details 
+
+Screenshot 4; active orders
+
+Screenshot 5;data sucessfully saved
+
+10. EXPLANATION OF MAJOR FUNCTIONS
+create_empty_data(): Creates the initial customer dictionary and order list.
+load_data(): Loads saved records from the JSON file and safely handles a missing or damaged file.
+save_data(): Writes all records to campus_food_data.json.
+show_menu_items(): Displays available food and drink items with prices.
+register_customer(): Stores customer name, phone number and delivery location.
+create_order(): Allows multiple items and quantities, then calculates subtotal, delivery fee and total.
+display_order(): Displays the complete details of one order.
+view_all_orders(): Displays all stored orders.
+search_orders(): Searches using order ID or customer name.
+update_order_status(): Changes the order's delivery status.
+cancel_order(): Marks an undelivered order as Cancelled.
+order_statistics(): Shows order counts and active-order revenue.
+main(): Controls the repeating menu and program flow.
+11. HOW THE SYSTEM WORKS
+Start the program and load saved data.
+Register a customer.
+Display the menu.
+Create an order by selecting items and quantities.
+The program calculates subtotal, delivery fee and total.
+The system generates an order ID and sets status to Pending.
+View, search, update or cancel orders as required.
+View order statistics.
+Save and exit; the records remain in the JSON file.
+12. SAMPLE TEST DATA
+Customer
+Phone
+Location
+Food
+Qty
+
+John Doe
+0700000001
+Block A
+Rolex
+2
+
+Mary Namukasa
+0700000002
+Hostel B
+Rice and Beef
+1
+
+Peter Okello
+0700000003
+Library
+Chips and Chicken
+1
+
+Sarah Atim
+0700000004
+Lecture Room 5
+Samosa
+3
+
+13. TESTING PLAN
+Test
+Expected Result
+Actual Result
+Status
+
+Register valid customer
+Customer stored
+Customer stored
+Pass
+
+Duplicate phone
+Duplicate rejected
+Duplicate rejected
+Pass
+
+Create order
+Order ID and total generated
+Generated
+Pass
+
+Invalid menu number
+Error shown
+Error shown
+Pass
+
+Invalid quantity
+Input requested again
+Input requested again
+Pass
+
+Search existing order
+Order displayed
+Displayed
+Pass
+
+Search missing order
+No match message
+Message shown
+Pass
+
+Update status
+Status changes
+Changed
+Pass
+
+Cancel delivered order
+Cancellation rejected
+Rejected
+Pass
+
+Save and restart
+Records remain
+Records loaded
+Pass
+
+14. ERROR HANDLING AND VALIDATION
+Empty customer fields are rejected.
+Quantities must be positive whole numbers.
+Invalid menu choices are rejected.
+Duplicate customer phone numbers are prevented.
+Unknown orders produce a clear message.
+Delivered orders cannot be cancelled.
+JSON errors are handled with try/except.
+15. DEMONSTRATION PROCEDURE
+Run the Python file.
+Show the menu.
+Register a customer.
+Display the food menu.
+Create an order with two or more items.
+Show the generated order ID and total.
+View all orders.
+Search for the order.
+Change its status.
+Display statistics.
+Save and exit.
+Run the program again to prove that records were saved.
+16. SCREENSHOT CHECKLIST
+Source code in VS Code.
+Main menu running.
+Menu items and prices.
+Customer registration.
+Successful order creation and total.
+All orders display.
+Search result.
+Updated order status.
+Order statistics.
+Restarted program showing saved records.
+17. GROUP WORK DIVISION
+Member
+Task
+Contribution
+
+Member 1
+Menu and customer registration
+Menu and customer functions
+
+Member 2
+Order creation and calculations
+Order creation and totals
+
+Member 3
+Search, status and cancellation
+Order tracking functions
+
+Member 4
+Persistence, statistics and testing
+JSON, statistics and integration
+
+Replace the member placeholders with the actual group members and adjust the division to reflect the real work completed.
+18. FUTURE IMPROVEMENTS
+Use SQLite or MySQL instead of JSON.
+Build a web or graphical interface.
+Add student and administrator accounts.
+Add mobile-money/card payment.
+Allow vendors to manage menus.
+Add delivery rider accounts and tracking.
+Add SMS/email notifications.
+Add daily, weekly and monthly reports.
+Add discounts and promotions.
+Improve security and access control.
+19. CONCLUSION
+The Campus Food Delivery and Order Management System provides a practical solution for registering customers, managing menu items, creating orders, calculating costs, tracking status and preserving records. It demonstrates Python functions, dictionaries, lists, loops, conditional statements, validation, exception handling and JSON persistence.
+The project can be expanded into a larger web or mobile application. The source code, report, screenshots and GitHub link should be submitted according to the lecturer's instructions.
+
+Github link: 
